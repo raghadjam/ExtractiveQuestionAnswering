@@ -1,0 +1,89 @@
+import json
+import re
+from collections import Counter
+from datasets import load_dataset
+
+# Normalization and Evaluation Helpers
+def normalize_text(s):
+    def white_space_fix(text):
+        return ' '.join(text.split())
+    return white_space_fix(s)
+
+def f1_score(prediction, ground_truth):
+    pred_tokens = normalize_text(prediction).split()
+    gt_tokens = normalize_text(ground_truth).split()
+    common = Counter(pred_tokens) & Counter(gt_tokens)
+    num_same = sum(common.values())
+    if num_same == 0:
+        return 0.0
+    precision = num_same / len(pred_tokens)
+    recall = num_same / len(gt_tokens)
+    return 2 * precision * recall / (precision + recall)
+
+def exact_match_score(prediction, ground_truth):
+    return normalize_text(prediction) == normalize_text(ground_truth)
+
+# Evaluation function which will take the predicted answer and the actual answer from the dataset
+def evaluate(predictions, references):
+    em_scores = []
+    f1_scores = []
+    for id_, ref in references.items():
+        pred = predictions.get(id_, "")
+        em = exact_match_score(pred, ref)
+        f1 = f1_score(pred, ref)
+        em_scores.append(em)
+        f1_scores.append(f1)
+    return {
+        "exact_match": 100.0 * sum(em_scores) / len(em_scores) if em_scores else 0,
+        "f1": 100.0 * sum(f1_scores) / len(f1_scores) if f1_scores else 0,
+    }
+
+# Convert HuggingFace Dataset to SQuAD format for training 
+def to_squad_format(hf_dataset):
+    squad_data = {"data": []}
+
+    for row in hf_dataset:
+        if "data" not in row:
+            continue
+
+        for entry in row["data"]:
+            if "paragraphs" not in entry:
+                continue
+
+            squad_data["data"].append({
+                "title": entry.get("title", "unknown"),
+                "paragraphs": entry["paragraphs"]
+            })
+
+    return squad_data
+
+def save_sample_to_file(squad_data, filename="sample_output.json", num_samples=5):
+    sample_data = {
+        "data": []
+    }
+
+    if len(squad_data["data"]) > 0:
+        data = squad_data["data"][0]
+        # Limit paragraphs to num_samples
+        limited_paragraphs = data["paragraphs"][:num_samples]
+
+        sample_data["data"].append({
+            "title": data.get("title", ""),
+            "paragraphs": limited_paragraphs
+        })
+
+    with open(filename, "w", encoding="utf-8") as f:
+        json.dump(sample_data, f, ensure_ascii=False, indent=2)
+
+    print(f"Sample saved to {filename}.")
+
+
+def main():
+    print(" Loading Arabic dataset from HuggingFace...")
+    dataset = load_dataset("i0xs0/Arabic-SQuAD")["train"] 
+
+    train_squad = to_squad_format(dataset)
+    save_sample_to_file(train_squad) # To see a sample of the dataset
+
+if __name__ == "__main__":
+    main()
