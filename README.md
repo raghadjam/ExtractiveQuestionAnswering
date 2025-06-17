@@ -19,7 +19,7 @@ This project is an **Arabic Question Answering (QA)** system that combines a **T
 
 ##  Collaborators
 
-- [@raghadjamhour](https://github.com/raghadjam)
+- [@raghadjam](https://github.com/raghadjam)
 - [@hebafialah](https://github.com/Fialah-heba)
 - [@danahafithah](https://github.com/dana-hafitha)
 
