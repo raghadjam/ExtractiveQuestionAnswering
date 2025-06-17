@@ -4,6 +4,7 @@ This project is an **Arabic Question Answering (QA)** system that combines a **T
 - Automatically retrieve the most relevant paragraph from a corpus.
 - Use a fine-tuned AraBERT model to extract the answer span from the retrieved paragraph.
 - Evaluate the answer using **Exact Match (EM)** and **F1 Score**.
+The system is trained and evaluated on the [**Arabic-SQuAD dataset**](https://huggingface.co/datasets/i0xs0/Arabic-SQuAD) — an Arabic translation of the Stanford QA Dataset (SQuAD), providing question-context-answer triples in Arabic.
 
 ---
 
