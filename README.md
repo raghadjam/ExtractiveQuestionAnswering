@@ -20,7 +20,7 @@ This project is an **Arabic Question Answering (QA)** system that combines a **T
 
 - [@raghadjamhour](https://github.com/raghadjam)
 - [@hebafialah](https://github.com/hebafialah)
-- [@danahafithah](https://github.com/danahafithah)
+- [@danahafithah](https://github.com/dana-hafitha)
 
 ---
 
