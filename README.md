@@ -10,7 +10,7 @@ This project is an **Arabic Question Answering (QA)** system that combines a **T
 ##  Features
 
 - **TF-IDF Retrieval**: Uses cosine similarity to find the most relevant context.
-- **AraBERT Fine-Tuned Model**: Extracts answers from Arabic text using a QA head.
+- **AraBERT Fine-Tuned Model**: Extracts answers from Arabic text using a QA model.
 - **Performance Metrics**: Includes EM and F1 to measure accuracy.
 
 ---
