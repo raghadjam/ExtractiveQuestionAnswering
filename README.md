@@ -7,7 +7,7 @@ This project is an **Arabic Question Answering (QA)** system that combines a **T
 
 ---
 
-## 💡 Features
+##  Features
 
 - **TF-IDF Retrieval**: Uses cosine similarity to find the most relevant context.
 - **AraBERT Fine-Tuned Model**: Extracts answers from Arabic text using a QA head.
@@ -16,10 +16,10 @@ This project is an **Arabic Question Answering (QA)** system that combines a **T
 ---
 
 
-## 👩‍💻 Collaborators
+##  Collaborators
 
 - [@raghadjamhour](https://github.com/raghadjam)
-- [@hebafialah](https://github.com/hebafialah)
+- [@hebafialah](https://github.com/Fialah-heba)
 - [@danahafithah](https://github.com/dana-hafitha)
 
 ---
