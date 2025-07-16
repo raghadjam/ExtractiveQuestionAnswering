@@ -7,7 +7,6 @@ This project is an **Arabic Question Answering (QA)** system that combines a **T
 - The system is trained and evaluated on the [**Arabic-SQuAD dataset**](https://huggingface.co/datasets/i0xs0/Arabic-SQuAD) — an Arabic translation of the Stanford QA Dataset (SQuAD), providing question-context-answer triples in Arabic.
 
 
-
 ##  Features
 
 - **TF-IDF Retrieval**: Uses cosine similarity to find the most relevant context.
