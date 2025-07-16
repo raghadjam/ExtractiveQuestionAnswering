@@ -6,7 +6,7 @@ This project is an **Arabic Question Answering (QA)** system that combines a **T
 - Evaluate the answer using **Exact Match (EM)** and **F1 Score**.
 - The system is trained and evaluated on the [**Arabic-SQuAD dataset**](https://huggingface.co/datasets/i0xs0/Arabic-SQuAD) — an Arabic translation of the Stanford QA Dataset (SQuAD), providing question-context-answer triples in Arabic.
 
----
+
 
 ##  Features
 
@@ -14,7 +14,7 @@ This project is an **Arabic Question Answering (QA)** system that combines a **T
 - **AraBERT Fine-Tuned Model**: Extracts answers from Arabic text using a QA model.
 - **Performance Metrics**: Includes EM and F1 to measure accuracy.
 
----
+
 
 
 ##  Collaborators
@@ -23,7 +23,6 @@ This project is an **Arabic Question Answering (QA)** system that combines a **T
 - [@hebafialah](https://github.com/Fialah-heba)
 - [@danahafithah](https://github.com/dana-hafitha)
 
----
 
 
 
